@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "YoutubeExternalSubtitleBrowser"
+version = "0.1.0"
+description = "Handles getting required local data for the Youtube External Subtitle Browser to work"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3 :: Only",
+]
+dependencies = [
+  "flask",
+  "flask-cors",
+  "PyYAML",
+]
+
+[tool.setuptools]
+platforms = ["Linux", "Windows"]

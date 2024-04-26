@@ -1,0 +1,8 @@
+# yaml is a datastore, sure
+# You can copy and edit this config then rename it to stream_list.yaml to use it
+- name: "Name of the stream goes here"
+  video_id: "123abc456def"
+  created_timestamp: 1705737600
+- name: "Name of the another stream goes here"
+  video_id: "789ghi1011jk"
+  created_timestamp: 1706737600
