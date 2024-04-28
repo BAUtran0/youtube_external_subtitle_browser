@@ -36,6 +36,8 @@ This is an interface to load an unofficial `.srt` subtitle file and overlay thos
 
 All this webapp does is provide a neat browser and player. But it's time to put down Adobe Premiere and After Effects, and whip out Aegisub like the good old days.
 
+You can see it running live at [https://bautl.aenbien.com](https://bautl.aenbien.com).
+
 
 ![Player](https://github.com/BAUtran0/youtube_external_subtitle_browser/assets/151094694/eb1328ad-afec-4b97-a03d-1cef21a17eda)
 
@@ -60,7 +62,7 @@ Requires `npm` and `python-virtualenv`.
 1. Create a `backend/stream_list.yaml` file or copy and use `backend/stream_list.yaml.example` as a template.
 2. For each video, you will need to add an entry to `stream_list.yaml`, each one requiring `name` for the video name, `video_id` for the YouTube video ID, and `created_timestamp` with the unix timestamp in seconds for when the stream has started.
 3. Upload an image of the stream's thumbnail as a `.jpg` to `backend/static/<video_id>.jpg`. You can check the ![README.md](https://github.com/BAUtran0/youtube_external_subtitle_browser/blob/main/backend/static/thumbnails/README.md) in that directory.
-4. Upload the `.srt` to `backend/static/<video_id>/<version>.srt`. The subtitles need to follow the version conventions described ![here](https://github.com/BAUtran0/youtube_external_subtitle_browser/blob/main/src/components/AboutVersioning.tsx). You can check the ![README.md](https://github.com/BAUtran0/youtube_external_subtitle_browser/blob/main/backend/static/subtitles/README.md) in that directory.
+4. Upload any `.srt` subtitle files to `backend/static/<video_id>/<version>.srt`. The subtitles need to follow the version conventions described ![here](https://github.com/BAUtran0/youtube_external_subtitle_browser/blob/main/src/components/AboutVersioning.tsx). You can check the ![README.md](https://github.com/BAUtran0/youtube_external_subtitle_browser/blob/main/backend/static/subtitles/README.md) in that directory.
 
 ##### Preparing for production
 1. Create a `.env` file or copy and use `.env.example` as a template.
