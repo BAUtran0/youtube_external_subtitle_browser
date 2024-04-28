@@ -21,6 +21,7 @@ dependencies = [
   "flask",
   "flask-cors",
   "PyYAML",
+  "gunicorn",
 ]
 
 [tool.setuptools]

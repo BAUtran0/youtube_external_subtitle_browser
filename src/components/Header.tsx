@@ -40,7 +40,7 @@ export default function Header() {
   return (
     <>
       <AppBar position="static">
-        <Toolbar sx={{display: "flex", justifyContent: "space-between"}}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
           <Box display="flex">
             <a href="/">
               <img

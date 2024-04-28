@@ -173,7 +173,7 @@ export default function VideoBrowser() {
             </Grid>
             <Grid xs={1}>
               <Tooltip title="About Versioning">
-                <Button sx={{marginLeft: "-2.5em", width: 0, minWidth: 0}} variant="outlined secondary" onClick={handleClickAboutVersioning}>
+                <Button sx={{ marginLeft: "-2.5em", width: 0, minWidth: 0 }} variant="outlined secondary" onClick={handleClickAboutVersioning}>
                   <HelpOutlineOutlinedIcon
                     fontSize="small"
                     sx={{ height: "100%" }}

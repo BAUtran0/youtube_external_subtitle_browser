@@ -58,7 +58,6 @@ def serve_index_html():
 def serve_js_bundles(filename):
     return send_from_directory("../dist", secure_filename(filename))
 
-
 @api.route('/video/<path:video_id>')
 def serve_(video_id):
     return send_file("../dist/index.html")

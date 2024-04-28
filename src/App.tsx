@@ -28,11 +28,11 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Home />} />
-              <Route path="/video/:videoId" element={<VideoBrowser />} />
+            <Route path="/video/:videoId" element={<VideoBrowser />} />
           </Routes>
         </BrowserRouter>
       </Box>
-  </ThemeProvider>
+    </ThemeProvider>
   );
 }
 

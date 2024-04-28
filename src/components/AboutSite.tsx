@@ -22,9 +22,9 @@ export default function AboutSite(props) {
         <Typography gutterBottom>
           Can you use the translations on this site to make clips? Yes, please do so!
           Making clips that can best capture our oshi's charming moments is itself an art,
-          and the goal is always to best promote them. The subtitle files are available 
+          and the goal is always to best promote them. The subtitle files are available
           to download, so feel free to use them!
-        </Typography> 
+        </Typography>
       </DialogContent>
       <DialogContent>
         More info can be found on the{" "}
@@ -32,7 +32,7 @@ export default function AboutSite(props) {
           underline="hover"
           href="https://github.com/BAUtran0/youtube_external_subtitle_browser"
         >
-          GitHub Page <GitHubIcon fontSize="inherit" sx={{mr: "0.5em"}}/>
+          GitHub Page <GitHubIcon fontSize="inherit" sx={{ mr: "0.5em" }} />
         </Link>
       </DialogContent>
     </Dialog>

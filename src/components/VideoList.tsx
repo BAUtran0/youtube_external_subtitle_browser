@@ -1,5 +1,5 @@
 import Stack from '@mui/material/Stack';
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import VideoListItem from './VideoListItem'
 import { API_BASE_URL } from './../constants'
 
@@ -9,8 +9,8 @@ export default function VideoList() {
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/api/get_stream_list`)
-    .then(response => response.json())
-    .then(data => setStreamList(data.stream_list))
+      .then(response => response.json())
+      .then(data => setStreamList(data.stream_list))
   }, [])
 
   return (

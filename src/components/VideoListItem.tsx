@@ -32,19 +32,19 @@ export default function VideoListItem(props) {
 
   useEffect(() => {
     fetch(`${API_BASE_URL}/static/thumbnails/${props.videoId}.jpg`)
-    .then(response => response.blob())
-    .then(data => setThumbnailImage(URL.createObjectURL(data)))
+      .then(response => response.blob())
+      .then(data => setThumbnailImage(URL.createObjectURL(data)))
   }, [])
 
   return (
-    <Item onClick={handleOnClick} sx={{cursor: "pointer", paddingTop: "1em"}}>
+    <Item onClick={handleOnClick} sx={{ cursor: "pointer", paddingTop: "1em" }}>
       <ListItem>
         <ListItemIcon>
-          <img style={{maxHeight: "10vh"}} src={thumbnailImage} />
+          <img style={{ maxHeight: "10vh" }} src={thumbnailImage} />
         </ListItemIcon>
         <Stack>
-          <ListItemText sx={{paddingLeft: "2em"}}><Typography variant="h5">{props.name}</Typography></ListItemText>
-          <span style={{textAlign: "right"}}>{dayjs.unix(props.createdTimestamp).format("YYYY-MM-DD")}</span>
+          <ListItemText sx={{ paddingLeft: "2em" }}><Typography variant="h5">{props.name}</Typography></ListItemText>
+          <span style={{ textAlign: "right" }}>{dayjs.unix(props.createdTimestamp).format("YYYY-MM-DD")}</span>
         </Stack>
       </ListItem>
     </Item>
