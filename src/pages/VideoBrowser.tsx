@@ -36,6 +36,7 @@ export default function VideoBrowser() {
   const params = useParams();
   let [isVersioningModalOpen, setIsVersioningModalOpen] = useState(false)
   let [availableSubtitles, setAvailableSubtitles] = useState([]);
+  let [subtitleCredits, setSubtitleCredits] = useState([])
   let [currentSubtitleFile, setCurrentSubtitleFile] = useState("");
   let [title, setTitle] = useState("Loading...");
   let [isWidescreen, setIsWidescreen] = useState(false);
@@ -100,6 +101,16 @@ export default function VideoBrowser() {
       .then((data) => {
         setAvailableSubtitles(data.available_subtitles);
         setCurrentSubtitleFile(data.available_subtitles[0]);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch(
+      `${API_BASE_URL}/api/get_subtitle_credits?video_id=${params.videoId}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setSubtitleCredits(data.subtitle_credits);
       });
   }, []);
 
@@ -221,7 +232,7 @@ export default function VideoBrowser() {
           </Grid>
         </Navi>
       </Box>
-      <AboutVersioning isOpen={isVersioningModalOpen} handleClose={handleCloseVersioningModal} />
+      <AboutVersioning isOpen={isVersioningModalOpen} handleClose={handleCloseVersioningModal} credits={subtitleCredits} />
     </>
   );
 }

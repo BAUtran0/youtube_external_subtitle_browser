@@ -1,2 +1,2 @@
-const PORT = (process.env.PORT ? process.env.PORT : (process.env.NODE_ENV == "production" ? 8000 : 5000))
+const PORT = (process.env.PORT ? process.env.PORT : (process.env.RUN_ENV == "production" ? 8000 : 5000))
 export const API_BASE_URL = process.env.API_BASE_URL ? process.env.API_BASE_URL : `http://localhost:${PORT}`

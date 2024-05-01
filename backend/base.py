@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 from functools import lru_cache
 
 from werkzeug.utils import secure_filename
@@ -40,12 +41,25 @@ def version_sort_key_func(srt_filename):
 @api.route('/api/get_available_subtitles')
 def get_available_subtitles():
     video_id = request.args.get('video_id')
-    available_subtitles = os.listdir(f'static/subtitles/{video_id}')
+    subtitles_dir = Path(f'static/subtitles/{video_id}')
+    available_subtitles = os.listdir(subtitles_dir)
+    available_subtitles = list(filter(lambda x: x != 'credits.yaml', available_subtitles))
     available_subtitles.sort(key=version_sort_key_func, reverse=True)
     return {
-      'available_subtitles': available_subtitles
+      'available_subtitles': available_subtitles,
     }
 
+@api.route('/api/get_subtitle_credits')
+def get_subtitle_credits():
+    video_id = request.args.get('video_id')
+    subtitles_dir = Path(f'static/subtitles/{video_id}')
+    subtitle_credits = []
+    if subtitles_dir.joinpath('credits.yaml').is_file():
+        with open(subtitles_dir.joinpath('credits.yaml'), 'r') as fh:
+            subtitle_credits = yaml.safe_load(fh)
+    return {
+      'subtitle_credits': subtitle_credits,
+    }
 
 # Serve frontend bundles for any of the React routes. This is dumb but lets us serve the 
 # frontend from flask so you don't need a reverse proxy in order to serve both a react

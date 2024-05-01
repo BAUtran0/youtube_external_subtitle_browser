@@ -17,12 +17,13 @@ setup_frontend: node_modules
 
 setup_backend: backend/venv
 
-start_frontend_dev: setup_frontend
+start_frontend_dev: RUN_ENV=development
+start_frontend_dev:
 	npm run start
 
 start_backend_dev: setup_backend
 	cd backend && venv/bin/flask --app base run
 
-start_production: NODE_ENV=production
+start_production: RUN_ENV=production
 start_production: setup_backend setup_frontend
 	set -a && source .env ; cd backend && venv/bin/gunicorn base:api
